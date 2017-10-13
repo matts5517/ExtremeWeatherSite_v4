@@ -9,3 +9,10 @@ var map =  new mapboxgl.Map({
     center: [-105, 37], // starting position
     zoom: 3 // starting zoom
 });
+// show Current ops pill box on init site load
+$('#currentObs-CntrlWrap').show();
+// on map style load
+map.on('style.load', function(){
+	currentObsLayers('temp_f'); // call the function that controls the visible layers to add the temp layer on site load.
+})
+

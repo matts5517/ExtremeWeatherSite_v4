@@ -36,7 +36,7 @@
   <body>
       <div class="mainTitle navLogo">WeatherExplorer.net</div>
         <div class="sideBarNavigation">
-          <div class="pillCheckbox" id="currentObs-Pill">
+          <div class="pillCheckbox" id="currentObs-Pill" style="color: orange;">
             Curent Observations
           </div>
           <div class="pillCheckbox" id="severe-Pill">
@@ -67,7 +67,7 @@
               </label>
               <!-- Temp content below checkbox -->
               <div class="cb_content">
-                <div id="temp_f" class="cb_slideContent">
+                <div id="temp_f" class="cb_slideContent hide" >
                   <div id="temp_fSliderWrapper" class="slider-container">
                     <div style="text-align:center; margin-bottom:10px;">Temperature Range: <span class="blueFont">0</span> - <span class='blueFont'>100</span></div>
                     <div id="tempSldr" class="slider sliderMain"></div>
@@ -141,15 +141,11 @@
               Tropical Placeholder
             </div>
           </div>
-          
-
         </div>
-
-
         
-      
+      <!-- Main map wrapper //////////////////////////////////// -->
       <div id="map" class="mapWrapper"></div>
-
+      <!-- Bring in js scripts ////////////////////////////////// -->
    <!--  <script type="text/javascript" src="js/severeData.js"></script>
     -->
     <script type="text/javascript" src="js/colorScale.js"></script>

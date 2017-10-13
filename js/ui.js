@@ -7,9 +7,18 @@ $("#attributeMinBtn").click(function () {
 	if(width > 250){
 		$("#sideBarAttWrapper").animate({ width: '160px'});
 		$('#attributeMinBtn').css({ "transform": "rotate(0deg)"})
+		$('#currentObs-CntrlWrap').find('.cb_slideContent').each(function(i,v){
+          $(v).slideUp();
+    	})
+
 	}else{
-		$("#sideBarAttWrapper").animate({ width: '500px'});
+		$("#sideBarAttWrapper").animate({ width: '300px'});
 		$('#attributeMinBtn').css({ "transform": "rotate(180deg)"})
+		$('#currentObs-CntrlWrap').find('input').each(function(i,v){
+			if(v.checked){
+				$(v).parent().next().children().slideDown();
+			}
+		})
 	}
 });
 
@@ -19,6 +28,7 @@ $( ".pillCheckbox" ).on( "click", function(c) {
 	var newID;
 	// add orange css color text to show what is selected
 	let test = $('.sideBarNavigation').find('.pillCheckbox')
+	console.log('look 2	')
 	$('.sideBarNavigation').find('.pillCheckbox').each(function(i,v){
           $(v).css('color', 'white')
     })
@@ -37,30 +47,22 @@ $( ".pillCheckbox" ).on( "click", function(c) {
 	
 });
 
-
-
-
-
-
-
-
-
-
 // Handle radio buttons for current observations //////////////////////////////////////////////////////////////////
 $( "#sideBarAttWrapper input" ).on( "click", function(c) {
 	var val = c.currentTarget.value;
 	if(c.currentTarget.checked == true){
-	  	$('#' + val).slideDown()
+	  	// $('#' + val).slideDown()
 	  	currentObsLayers(val); // call the function that controls the visible layers
 	  }else{
-	  	$('#' + val).slideUp()
+	  	// $('#' + val).slideUp()
+	  	''
 	  }
 	  // loop through radio buttons and slide up all the others that do not match the current target.
 	  $( "#sideBarAttWrapper input" ).each(function(v,c){
 		   if(c.value == val){
 		   	''
 		   }else{
-		   	 $('#' + c.value).slideUp()
+		   	 // $('#' + c.value).slideUp()
 		   }
 	});
 });

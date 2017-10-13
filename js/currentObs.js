@@ -34,7 +34,7 @@ var currentObsLayers = function(val){
 	}else if(val == 'pressure'){
 		stopList = pressureList
 	}
-	console.log(val)
+	console.log(map)
 	map.addSource(val, {
         "type": "geojson",
         "data": jsonData
